@@ -67,10 +67,10 @@ export default function Experience() {
           {/* Left Panel (32%) */}
           <div className="lg:w-[32%] bg-[#25332B]/85 p-8 lg:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#CFE8D6]/15 relative overflow-hidden z-10">
             {/* Floating Background Geometric Shapes */}
-            <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full border-[18px] border-[#95C7A4]/08 pointer-events-none group-hover:scale-125 transition-transform duration-700" />
-            <div className="absolute top-6 right-4 w-12 h-12 rounded-xl border border-[#CFE8D6]/20 rotate-45 pointer-events-none animate-pulse" />
+            <div className="absolute -bottom-24 -left-16 w-44 h-44 rounded-full border-[18px] border-[#95C7A4]/08 pointer-events-none group-hover:scale-125 origin-bottom-left transition-transform duration-700 z-0" />
+            <div className="absolute top-6 right-4 w-12 h-12 rounded-xl border border-[#CFE8D6]/20 rotate-45 pointer-events-none animate-pulse z-0" />
 
-            <div>
+            <div className="relative z-20">
               <div className="flex items-center gap-3.5 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-[#95C7A4]/15 flex items-center justify-center text-[#95C7A4] border border-[#95C7A4]/30 group-hover:rotate-6 transition-transform duration-500 shadow-[0_0_20px_rgba(149,199,164,0.2)]">
                   <Building2 size={28} />
@@ -96,8 +96,8 @@ export default function Experience() {
             </div>
 
             {/* Direct Internship Certificate Link */}
-            <div className="mt-8 pt-5 border-t border-[#CFE8D6]/15 flex flex-col gap-3">
-              <p className="text-xs text-[#CFE8D6]/70 font-mono">Full Stack AI &amp; RAG Systems</p>
+            <div className="mt-8 pt-5 border-t border-[#CFE8D6]/15 flex flex-col gap-3 relative z-20">
+              <p className="text-xs text-[#CFE8D6]/70 font-mono relative z-20">Full Stack AI &amp; RAG Systems</p>
               <a 
                 href="https://drive.google.com/file/d/14dlh0XcSOouJzCC0akyCRvkRhOEG_nIO/view?usp=sharing"
                 target="_blank"
