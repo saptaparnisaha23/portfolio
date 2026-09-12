@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #25332B;
+  --color-background-secondary: #1F2B24;
+  --color-foreground: #F5FAF7;
+  --color-text-muted: #CFE8D6;
+  --color-primary: #95C7A4;
+  --color-sage: #95C7A4;
+  --color-sage-soft: #CFE8D6;
+  --color-card: #F5FAF7;
+  --color-glass: rgba(245, 250, 247, 0.05);
+  --color-glass-border: rgba(207, 232, 214, 0.18);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
+}
+
+@layer base {
+  body {
+    background-color: #25332B;
+    color: #F5FAF7;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #25332B; 
+}
+::-webkit-scrollbar-thumb {
+  background: #1F2B24; 
+  border: 1px solid rgba(207, 232, 214, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #95C7A4; 
+}
+
+/* Luxury Editorial Glassmorphism Surface Utilities */
+.glass-panel {
+  background: linear-gradient(180deg, rgba(245, 250, 247, 0.07) 0%, rgba(207, 232, 214, 0.03) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(207, 232, 214, 0.18);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: linear-gradient(180deg, rgba(245, 250, 247, 0.11) 0%, rgba(207, 232, 214, 0.06) 100%);
+  border-color: rgba(149, 199, 164, 0.45);
+  box-shadow: 0 25px 50px rgba(18, 27, 22, 0.7), 0 0 30px rgba(149, 199, 164, 0.18);
+}
+
+/* Surname Sage Gradient */
+.text-surname-gradient {
+  background: linear-gradient(135deg, #F5FAF7 0%, #95C7A4 60%, #CFE8D6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-sage-glow {
+  text-shadow: 0 0 20px rgba(149, 199, 164, 0.4);
+}
+
+/* Subtle Noise Texture Overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
