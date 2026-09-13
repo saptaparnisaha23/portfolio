@@ -79,15 +79,15 @@ export default function About() {
           >
             <motion.div 
               variants={itemVariants} 
-              className="relative w-full h-full min-h-[380px] lg:min-h-[420px] rounded-[32px] overflow-hidden glass-panel border border-[#CFE8D6]/20 shadow-[0_20px_50px_rgba(18,27,22,0.9)] group bg-[#25332B]"
+              className="relative w-full h-full min-h-[380px] lg:min-h-[420px] rounded-[32px] overflow-hidden glass-panel border border-[#CFE8D6]/20 shadow-[0_20px_50px_rgba(18,27,22,0.9)] group bg-[#70757d]"
             >
               <Image 
                 src="/saptaparni-profile-v2.jpg"
                 alt="Saptaparni Saha"
                 fill
-                className="object-cover scale-[1.36] object-[center_28%] transition-transform duration-700 group-hover:scale-[1.40]"
+                className="object-cover scale-[1.15] object-[center_12%] transition-transform duration-700 group-hover:scale-[1.18]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#25332B]/80 via-transparent to-transparent opacity-60 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#25332B]/70 via-transparent to-transparent opacity-60 pointer-events-none" />
             </motion.div>
           </motion.div>
 
