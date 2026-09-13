@@ -52,7 +52,7 @@ export default function About() {
         {/* Sample-Matched 2-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Portrait photo card matching the sample (rounded box, 3:4 aspect, no clipping) */}
+          {/* Left Column: Portrait photo card matching the sample */}
           <motion.div 
             className="lg:col-span-5 flex justify-center lg:justify-start"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -72,7 +72,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right Column: Title + 3 Descriptive Paragraphs + Glass Stat Cards */}
+          {/* Right Column: Title + Unique Personalized Paragraphs + Glass Stat Cards */}
           <motion.div 
             className="lg:col-span-7 flex flex-col justify-center"
             variants={containerVariants}
@@ -88,16 +88,16 @@ export default function About() {
               <div className="h-1 w-16 bg-[#95C7A4] rounded-full mt-3" />
             </motion.div>
 
-            {/* 3 Sample Descriptive Paragraphs */}
+            {/* Unique Tailored Descriptive Paragraphs */}
             <motion.div variants={itemVariants} className="space-y-4 text-[#CFE8D6]/85 text-base sm:text-[17px] leading-relaxed font-light mb-8">
               <p>
-                I am a Computer Science student specializing in Artificial Intelligence and Data Engineering at Lovely Professional University. I enjoy solving analytical problems by breaking down data challenges into clear, logical steps.
+                I am a Computer Science undergraduate specializing in Artificial Intelligence and Data Engineering at Lovely Professional University. Driven by curiosity and analytical rigor, I thrive on transforming complex, high-dimensional data challenges into intelligent, seamless digital solutions.
               </p>
               <p>
-                My main technical focus is on building reliable backend systems, smart search tools (RAG applications), and full-stack web products. During my Machine Learning internship at Futurense, I built automated data pipelines to make processing faster and smoother.
+                My technical expertise centers on architecting end-to-end Retrieval-Augmented Generation (RAG) pipelines, high-performance FastAPI backends, and full-stack web applications. Through my Machine Learning internship at Futurense, I built automated data workflows and semantic vector indexing systems that deliver precise, production-grade intelligence.
               </p>
               <p>
-                I am always eager to learn new skills and apply logical thinking to write clean, easy-to-maintain software that delivers real-world impact.
+                Beyond writing clean, scalable code, I am deeply committed to exploring cutting-edge AI paradigms and continuous learning—always aiming to build impactful software that bridges mathematical elegance with real-world usability.
               </p>
             </motion.div>
 
