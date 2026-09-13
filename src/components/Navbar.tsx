@@ -32,7 +32,7 @@ export default function Navbar() {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 200 && rect.bottom >= 150) {
+          if (rect.top <= 140 && rect.bottom >= 140) {
             current = section;
           }
         }
@@ -50,9 +50,8 @@ export default function Navbar() {
     
     const element = document.querySelector(href);
     if (element) {
-      const elementHeader = element.querySelector("h2, h3") || element;
-      const headerRect = elementHeader.getBoundingClientRect();
-      const targetY = window.scrollY + headerRect.top - 110;
+      const elemRect = (element as HTMLElement).getBoundingClientRect();
+      const targetY = window.scrollY + elemRect.top - 80;
 
       window.scrollTo({
         top: Math.max(0, targetY),

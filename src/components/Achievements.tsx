@@ -49,7 +49,7 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="pt-36 sm:pt-44 pb-32 scroll-mt-36 relative z-10 bg-transparent border-t border-[#CFE8D6]/10">
+    <section id="achievements" className="pt-20 sm:pt-24 pb-20 scroll-mt-20 relative z-10 bg-transparent border-t border-[#CFE8D6]/10">
       <div className="container mx-auto px-6 md:px-12 mb-20">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

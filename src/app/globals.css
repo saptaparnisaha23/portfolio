@@ -18,11 +18,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 140px;
+    scroll-padding-top: 85px;
   }
 
   section {
-    scroll-margin-top: 140px;
+    scroll-margin-top: 85px;
   }
 
   body {

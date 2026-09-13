@@ -46,7 +46,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="pt-24 sm:pt-28 pb-24 scroll-mt-24 relative z-10 bg-transparent border-t border-[#CFE8D6]/10">
+    <section id="about" className="pt-20 sm:pt-24 pb-20 scroll-mt-20 relative z-10 bg-transparent border-t border-[#CFE8D6]/10">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Section Header */}
