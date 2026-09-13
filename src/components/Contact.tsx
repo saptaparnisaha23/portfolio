@@ -49,7 +49,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 relative z-10 bg-[#25332B]/30 backdrop-blur-sm border-t border-[#CFE8D6]/10 overflow-hidden">
+    <section id="contact" className="py-32 relative z-10 bg-transparent border-t border-[#CFE8D6]/10 overflow-hidden">
       {/* Background Soft Glow Orbs */}
       <div className="absolute bottom-0 right-0 w-[550px] h-[550px] bg-[#95C7A4]/08 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute top-1/4 left-0 w-[450px] h-[450px] bg-[#CFE8D6]/06 rounded-full blur-[150px] pointer-events-none" />

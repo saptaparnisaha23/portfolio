@@ -30,59 +30,53 @@ export default function ParticleBackground() {
         events: {
           onHover: {
             enable: true,
-            mode: ["grab", "bubble"],
+            mode: "grab",
           },
         },
         modes: {
           grab: {
-            distance: 180,
+            distance: 140,
             links: {
-              opacity: 0.65,
+              opacity: 0.45,
               color: "#95C7A4",
             },
-          },
-          bubble: {
-            distance: 200,
-            size: 4,
-            duration: 0.4,
-            opacity: 0.8,
           },
         },
       },
       particles: {
         color: { 
-          value: ["#95C7A4", "#CFE8D6", "#3D6649", "#5C996D", "#A3D4B1"] 
+          value: ["#95C7A4", "#CFE8D6", "#4E7C59", "#78AC86"] 
         },
         links: {
           color: "#95C7A4",
-          distance: 155,
+          distance: 135,
           enable: true,
-          opacity: 0.32,
-          width: 1.2,
+          opacity: 0.2,
+          width: 1,
         },
         move: {
           direction: "none",
           enable: true,
           outModes: { default: "out" },
           random: true,
-          speed: 0.6,
+          speed: 0.45,
           straight: false,
         },
         number: {
           density: { enable: true },
-          value: 170,
+          value: 85,
         },
         opacity: {
-          value: { min: 0.25, max: 0.75 },
+          value: { min: 0.18, max: 0.6 },
           animation: {
             enable: true,
-            speed: 0.8,
+            speed: 0.6,
             sync: false,
           },
         },
         shape: { type: "circle" },
         size: {
-          value: { min: 1.5, max: 3.2 },
+          value: { min: 1, max: 2.2 },
         },
       },
       detectRetina: true,

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="py-12 bg-[#25332B]/40 backdrop-blur-sm border-t border-[#CFE8D6]/10 relative z-10 overflow-hidden">
+    <footer className="py-12 bg-transparent border-t border-[#CFE8D6]/10 relative z-10 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 relative">
         <div className="text-[#F5FAF7] font-extrabold text-xl font-heading tracking-tight">
           Saptaparni<span className="text-[#95C7A4]">.</span>
