@@ -6,6 +6,7 @@ import { Download, FolderGit2, Mail, Sparkles } from "lucide-react";
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from "./Icons";
 
 const roles = [
+  "AI & Data Engineer",
   "AI Engineer",
   "ML Developer",
   "FastAPI Specialist",
@@ -55,7 +56,7 @@ export default function Hero() {
           >
             <Sparkles size={13} className="text-[#95C7A4]" />
             <span className="text-[#95C7A4] font-mono text-[11px] tracking-[0.2em] uppercase font-semibold">
-              AI • MACHINE LEARNING • FULL STACK DEVELOPER
+              AI &amp; DATA ENGINEERING • MACHINE LEARNING • FULL STACK
             </span>
           </motion.div>
           
@@ -85,7 +86,7 @@ export default function Hero() {
           
           {/* Calm Editorial Summary */}
           <motion.p variants={itemVariants} className="text-[#CFE8D6]/85 text-base sm:text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-light text-center">
-            AI &amp; Machine Learning Engineer specializing in Retrieval-Augmented Generation (RAG), high-throughput FastAPI backends, and elegant production web applications.
+            AI &amp; Data Engineer specializing in Machine Learning, Retrieval-Augmented Generation (RAG), high-throughput FastAPI backends, and elegant production web applications.
           </motion.p>
           
           {/* Pill-Shaped Magnetic Buttons */}
