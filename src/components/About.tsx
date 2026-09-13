@@ -4,21 +4,43 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { GraduationCap, Code2, Sparkles, MapPin, Award, BookOpen, Terminal, Database, Cpu, Layers } from "lucide-react";
 
-const allSkills = [
-  { name: "Python", level: 95, icon: Terminal },
-  { name: "Java", level: 85, icon: Code2 },
-  { name: "SQL", level: 90, icon: Database },
-  { name: "FastAPI", level: 90, icon: Cpu },
-  { name: "Flask", level: 80, icon: Layers },
-  { name: "React", level: 85, icon: Code2 },
-  { name: "Docker", level: 75, icon: Layers },
-  { name: "AWS", level: 75, icon: Cpu },
-  { name: "Azure", level: 70, icon: Cpu },
-  { name: "PostgreSQL", level: 85, icon: Database },
-  { name: "Pandas", level: 90, icon: Terminal },
-  { name: "NumPy", level: 88, icon: Terminal },
-  { name: "EDA", level: 92, icon: Layers },
-  { name: "ChromaDB", level: 88, icon: Database },
+const coreSkills = [
+  {
+    name: "Python",
+    category: "AI & Core Logic",
+    description: "Primary language for AI modeling, backend development, and automation.",
+    icon: Terminal,
+  },
+  {
+    name: "FastAPI",
+    category: "API & Microservices",
+    description: "High-performance asynchronous REST APIs & backend orchestration.",
+    icon: Cpu,
+  },
+  {
+    name: "RAG & ChromaDB",
+    category: "AI & Vector Search",
+    description: "Retrieval-Augmented Generation, vector indexation, & semantic search.",
+    icon: Sparkles,
+  },
+  {
+    name: "SQL & PostgreSQL",
+    category: "Database Engineering",
+    description: "Relational schema design, data modeling, & query optimization.",
+    icon: Database,
+  },
+  {
+    name: "Data Science & EDA",
+    category: "Analytics & ML",
+    description: "Data processing & exploratory analysis using Pandas & NumPy.",
+    icon: Layers,
+  },
+  {
+    name: "React & Next.js",
+    category: "Frontend Systems",
+    description: "Building fast, responsive, & interactive modern web applications.",
+    icon: Code2,
+  },
 ];
 
 const aboutCards = [
@@ -180,46 +202,46 @@ export default function About() {
             </p>
           </div>
 
-          {/* 2-Column Luxury Skill Progress Pills */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {allSkills.map((skill, index) => {
+          {/* Grid of Core Skill Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {coreSkills.map((skill, index) => {
               const SkillIcon = skill.icon;
               return (
                 <motion.div 
                   key={skill.name} 
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.04 }}
-                  className="glass-panel p-4 sm:p-5 rounded-2xl border border-[#CFE8D6]/20 flex flex-col gap-3 group hover:border-[#95C7A4]/40 transition-all duration-300 relative overflow-hidden"
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  whileHover={{ y: -4 }}
+                  className="glass-panel glass-panel-hover p-6 rounded-2xl border border-[#CFE8D6]/20 flex flex-col justify-between group relative overflow-hidden shadow-[0_10px_30px_rgba(18,27,22,0.6)]"
                 >
-                  {/* Top Bar: Icon, Name & Percentage */}
-                  <div className="flex justify-between items-center text-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-xl bg-[#95C7A4]/15 text-[#95C7A4] group-hover:scale-110 transition-transform">
-                        <SkillIcon size={16} />
+                  <div>
+                    {/* Header: Icon & Category Badge */}
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <div className="p-3 rounded-xl bg-[#95C7A4]/15 text-[#95C7A4] border border-[#95C7A4]/25 group-hover:scale-110 group-hover:bg-[#95C7A4]/20 transition-all">
+                        <SkillIcon size={20} />
                       </div>
-                      <span className="font-semibold text-[#F5FAF7] font-heading text-sm sm:text-base">
-                        {skill.name}
+                      <span className="font-mono text-[11px] text-[#95C7A4] font-semibold px-3 py-1 rounded-full bg-[#95C7A4]/10 border border-[#95C7A4]/20 uppercase tracking-wider">
+                        {skill.category}
                       </span>
                     </div>
-                    <span className="font-mono text-xs text-[#95C7A4] font-bold px-2.5 py-1 rounded-full bg-[#95C7A4]/10 border border-[#95C7A4]/20">
-                      {skill.level}%
-                    </span>
+
+                    {/* Title */}
+                    <h4 className="text-lg font-bold text-[#F5FAF7] font-heading mb-2 group-hover:text-[#95C7A4] transition-colors">
+                      {skill.name}
+                    </h4>
+
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-[#CFE8D6]/70 leading-relaxed font-light">
+                      {skill.description}
+                    </p>
                   </div>
 
-                  {/* Glass Track & Liquid Animated Fill */}
-                  <div className="w-full bg-[#25332B] rounded-full h-3 overflow-hidden border border-[#CFE8D6]/15 p-0.5 relative">
-                    <motion.div
-                      className="bg-gradient-to-r from-[#95C7A4] via-[#CFE8D6] to-[#95C7A4] h-full rounded-full shadow-[0_0_15px_rgba(149,199,164,0.6)] relative overflow-hidden"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2, delay: 0.1 + index * 0.04, ease: "easeOut" }}
-                    >
-                      {/* Hover Shimmer Line */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-pulse" />
-                    </motion.div>
+                  {/* Bottom Accent Line on Hover */}
+                  <div className="mt-5 pt-3 border-t border-[#CFE8D6]/10 flex items-center justify-between text-xs font-mono text-[#CFE8D6]/50">
+                    <span>Core Competency</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#95C7A4] group-hover:animate-ping" />
                   </div>
                 </motion.div>
               );
