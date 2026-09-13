@@ -187,11 +187,12 @@ export default function About() {
 
         {/* LUXURY SKILLS SECTION */}
         <motion.div 
+          id="skills"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="pt-8"
+          className="pt-16 sm:pt-20 scroll-mt-24"
         >
           <div className="mb-12 text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start gap-2.5 text-xs font-mono text-[#95C7A4] uppercase tracking-[0.25em] mb-2 font-semibold">
