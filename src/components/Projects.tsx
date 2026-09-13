@@ -149,7 +149,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-32 relative z-10 bg-[#1F2B24]/50 backdrop-blur-md border-t border-[#CFE8D6]/10">
+    <section id="projects" className="py-32 relative z-10 bg-[#1F2B24]/20 backdrop-blur-sm border-t border-[#CFE8D6]/10">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

@@ -11,7 +11,7 @@ export default function ParticleBackground() {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 35; // Max 17.5px offset
+      const x = (e.clientX / innerWidth - 0.5) * 35;
       const y = (e.clientY / innerHeight - 0.5) * 35;
       setMousePos({ x, y });
     };
@@ -30,49 +30,59 @@ export default function ParticleBackground() {
         events: {
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: ["grab", "bubble"],
           },
         },
         modes: {
-          repulse: {
-            distance: 140,
+          grab: {
+            distance: 180,
+            links: {
+              opacity: 0.65,
+              color: "#95C7A4",
+            },
+          },
+          bubble: {
+            distance: 200,
+            size: 4,
             duration: 0.4,
-            speed: 0.5,
+            opacity: 0.8,
           },
         },
       },
       particles: {
-        color: { value: "#95C7A4" },
+        color: { 
+          value: ["#95C7A4", "#CFE8D6", "#3D6649", "#5C996D", "#A3D4B1"] 
+        },
         links: {
           color: "#95C7A4",
-          distance: 140,
+          distance: 155,
           enable: true,
-          opacity: 0.16,
-          width: 1,
+          opacity: 0.32,
+          width: 1.2,
         },
         move: {
           direction: "none",
           enable: true,
           outModes: { default: "out" },
           random: true,
-          speed: 0.45,
+          speed: 0.6,
           straight: false,
         },
         number: {
           density: { enable: true },
-          value: 140,
+          value: 170,
         },
         opacity: {
-          value: { min: 0.12, max: 0.5 },
+          value: { min: 0.25, max: 0.75 },
           animation: {
             enable: true,
-            speed: 0.6,
+            speed: 0.8,
             sync: false,
           },
         },
         shape: { type: "circle" },
         size: {
-          value: { min: 1, max: 2.5 },
+          value: { min: 1.5, max: 3.2 },
         },
       },
       detectRetina: true,
@@ -81,13 +91,13 @@ export default function ParticleBackground() {
   );
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#25332B]">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#18261E]">
       {/* Luxury Grain Noise Texture Overlay */}
-      <div className="absolute inset-0 bg-noise opacity-40 z-10" />
+      <div className="absolute inset-0 bg-noise opacity-30 z-10" />
 
       {/* LAYER 1: Top Radial Soft Sage Spotlight */}
       <div 
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[700px] bg-[radial-gradient(ellipse_at_top,rgba(149,199,164,0.15),transparent_70%)] transition-transform duration-700 ease-out z-0"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[700px] bg-[radial-gradient(ellipse_at_top,rgba(149,199,164,0.18),transparent_70%)] transition-transform duration-700 ease-out z-0"
         style={{
           transform: `translate3d(calc(-50% + ${mousePos.x * 0.3}px), ${mousePos.y * 0.3}px, 0)`,
         }}
@@ -95,19 +105,19 @@ export default function ParticleBackground() {
 
       {/* LAYER 2: Large Slow Drifting Blurred Sage Blobs with Parallax */}
       <div 
-        className="absolute top-[10%] left-[5%] w-[500px] h-[500px] rounded-full bg-[#95C7A4]/10 blur-[140px] animate-pulse transition-transform duration-1000 ease-out z-0"
+        className="absolute top-[10%] left-[5%] w-[500px] h-[500px] rounded-full bg-[#95C7A4]/12 blur-[140px] animate-pulse transition-transform duration-1000 ease-out z-0"
         style={{
           transform: `translate3d(${mousePos.x * 0.6}px, ${mousePos.y * 0.6}px, 0)`,
         }}
       />
       <div 
-        className="absolute top-[42%] right-[5%] w-[550px] h-[550px] rounded-full bg-[#CFE8D6]/08 blur-[160px] transition-transform duration-1000 ease-out z-0"
+        className="absolute top-[42%] right-[5%] w-[550px] h-[550px] rounded-full bg-[#CFE8D6]/10 blur-[160px] transition-transform duration-1000 ease-out z-0"
         style={{
           transform: `translate3d(${-mousePos.x * 0.5}px, ${-mousePos.y * 0.5}px, 0)`,
         }}
       />
       <div 
-        className="absolute top-[75%] left-[20%] w-[480px] h-[480px] rounded-full bg-[#95C7A4]/08 blur-[150px] animate-pulse transition-transform duration-1000 ease-out z-0"
+        className="absolute top-[75%] left-[20%] w-[480px] h-[480px] rounded-full bg-[#95C7A4]/10 blur-[150px] animate-pulse transition-transform duration-1000 ease-out z-0"
         style={{
           transform: `translate3d(${mousePos.x * 0.4}px, ${mousePos.y * 0.4}px, 0)`,
         }}
@@ -131,7 +141,7 @@ export default function ParticleBackground() {
         <Particles
           id="tsparticles"
           options={options}
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 pointer-events-auto"
         />
       </ParticlesProvider>
     </div>

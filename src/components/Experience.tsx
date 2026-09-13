@@ -51,7 +51,7 @@ export default function Experience() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           whileHover={{ y: -6 }}
-          className="w-[92%] max-w-6xl mx-auto min-h-[340px] glass-panel border border-[#CFE8D6]/20 rounded-[32px] shadow-[0_25px_60px_rgba(18,27,22,0.85)] overflow-hidden flex flex-col lg:flex-row group transition-all duration-500 hover:border-[#95C7A4]/50 hover:shadow-[0_30px_70px_rgba(149,199,164,0.2)] relative bg-[#1F2B24]/90 backdrop-blur-2xl"
+          className="w-[92%] max-w-6xl mx-auto min-h-[340px] glass-panel border border-[#CFE8D6]/20 rounded-[32px] shadow-[0_25px_60px_rgba(18,27,22,0.85)] overflow-hidden flex flex-col lg:flex-row group transition-all duration-500 hover:border-[#95C7A4]/50 hover:shadow-[0_30px_70px_rgba(149,199,164,0.2)] relative bg-[#1F2B24]/40 backdrop-blur-md"
         >
           {/* Mouse Spotlight Glow */}
           <motion.div 
