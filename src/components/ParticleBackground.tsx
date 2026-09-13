@@ -29,17 +29,10 @@ export default function ParticleBackground() {
       interactivity: {
         events: {
           onHover: {
-            enable: true,
-            mode: "grab",
+            enable: false,
           },
-        },
-        modes: {
-          grab: {
-            distance: 140,
-            links: {
-              opacity: 0.45,
-              color: "#95C7A4",
-            },
+          onClick: {
+            enable: false,
           },
         },
       },
@@ -135,7 +128,7 @@ export default function ParticleBackground() {
         <Particles
           id="tsparticles"
           options={options}
-          className="absolute inset-0 z-0 pointer-events-auto"
+          className="absolute inset-0 z-0 pointer-events-none"
         />
       </ParticlesProvider>
     </div>
