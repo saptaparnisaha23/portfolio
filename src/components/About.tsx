@@ -85,7 +85,7 @@ export default function About() {
                 src="/saptaparni-profile-v2.jpg"
                 alt="Saptaparni Saha"
                 fill
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#25332B]/80 via-transparent to-transparent opacity-60 pointer-events-none" />
