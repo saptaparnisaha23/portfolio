@@ -106,11 +106,11 @@ export default function About() {
         </motion.div>
 
         {/* Editorial Split Layout */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start mb-20">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch mb-20">
           
-          {/* Left: Portrait filling the box completely */}
+          {/* Left: Portrait filling the box completely, parallel to right content */}
           <motion.div 
-            className="w-full lg:w-5/12"
+            className="w-full lg:w-5/12 flex flex-col"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -118,15 +118,15 @@ export default function About() {
           >
             <motion.div 
               variants={itemVariants} 
-              className="relative w-full aspect-[4/4.5] max-h-[410px] rounded-[32px] overflow-hidden glass-panel border border-[#CFE8D6]/20 shadow-[0_20px_50px_rgba(18,27,22,0.9)] group bg-[#25332B] mx-auto"
+              className="relative w-full h-full min-h-[380px] lg:min-h-[420px] rounded-[32px] overflow-hidden glass-panel border border-[#CFE8D6]/20 shadow-[0_20px_50px_rgba(18,27,22,0.9)] group bg-[#25332B]"
             >
               <Image 
                 src="/saptaparni-profile-v2.jpg"
                 alt="Saptaparni Saha"
                 fill
-                className="object-cover scale-[1.38] object-center transition-transform duration-700 group-hover:scale-[1.42]"
+                className="object-cover scale-[1.22] object-[center_35%] transition-transform duration-700 group-hover:scale-[1.26]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#25332B]/80 via-transparent to-transparent opacity-70 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#25332B]/80 via-transparent to-transparent opacity-60 pointer-events-none" />
             </motion.div>
           </motion.div>
 
