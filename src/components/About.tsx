@@ -85,7 +85,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="pt-36 sm:pt-44 pb-32 scroll-mt-36 relative z-10 bg-transparent border-t border-[#CFE8D6]/10">
+    <section id="about" className="pt-24 sm:pt-28 pb-24 scroll-mt-24 relative z-10 bg-transparent border-t border-[#CFE8D6]/10">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Section Header */}
@@ -94,19 +94,19 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-20 text-center lg:text-left"
+          className="mb-8 sm:mb-10 text-center lg:text-left"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5FAF7]/[0.06] border border-[#CFE8D6]/20 text-[#95C7A4] font-mono text-xs uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5FAF7]/[0.06] border border-[#CFE8D6]/20 text-[#95C7A4] font-mono text-xs uppercase tracking-widest mb-3">
             <Sparkles size={14} /> Discovery
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight font-heading text-[#F5FAF7]">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading text-[#F5FAF7]">
             About <span className="text-[#95C7A4] text-sage-glow">Me</span>
           </h2>
-          <div className="h-1 w-20 bg-[#95C7A4] mx-auto lg:mx-0 rounded-full mt-4" />
+          <div className="h-1 w-16 bg-[#95C7A4] mx-auto lg:mx-0 rounded-full mt-3" />
         </motion.div>
 
         {/* Editorial Split Layout */}
-        <div className="flex flex-col lg:flex-row gap-16 items-start mb-28">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start mb-20">
           
           {/* Left: Portrait filling the box completely */}
           <motion.div 
@@ -118,7 +118,7 @@ export default function About() {
           >
             <motion.div 
               variants={itemVariants} 
-              className="relative w-full aspect-[4/5] rounded-[32px] overflow-hidden glass-panel border border-[#CFE8D6]/20 shadow-[0_20px_50px_rgba(18,27,22,0.9)] group bg-[#25332B]"
+              className="relative w-full aspect-[4/4.5] max-h-[410px] rounded-[32px] overflow-hidden glass-panel border border-[#CFE8D6]/20 shadow-[0_20px_50px_rgba(18,27,22,0.9)] group bg-[#25332B] mx-auto"
             >
               <Image 
                 src="/saptaparni-profile-v2.jpg"
