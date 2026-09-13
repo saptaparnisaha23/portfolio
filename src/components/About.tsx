@@ -108,7 +108,7 @@ export default function About() {
         {/* Editorial Split Layout */}
         <div className="flex flex-col lg:flex-row gap-16 items-start mb-28">
           
-          {/* Left: Portrait with rounded 32px corners */}
+          {/* Left: Portrait filling the box completely */}
           <motion.div 
             className="w-full lg:w-5/12"
             variants={containerVariants}
@@ -118,15 +118,15 @@ export default function About() {
           >
             <motion.div 
               variants={itemVariants} 
-              className="relative w-full aspect-[4/5] rounded-[32px] overflow-hidden glass-panel border border-[#CFE8D6]/20 shadow-[0_20px_50px_rgba(18,27,22,0.9)] group"
+              className="relative w-full aspect-[4/5] rounded-[32px] overflow-hidden glass-panel border border-[#CFE8D6]/20 shadow-[0_20px_50px_rgba(18,27,22,0.9)] group bg-[#25332B]"
             >
               <Image 
                 src="/saptaparni-profile-v2.jpg"
                 alt="Saptaparni Saha"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover scale-[1.38] object-center transition-transform duration-700 group-hover:scale-[1.42]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#25332B] via-transparent to-transparent opacity-85" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#25332B]/80 via-transparent to-transparent opacity-70 pointer-events-none" />
             </motion.div>
           </motion.div>
 

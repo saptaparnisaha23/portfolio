@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Download, FolderGit2, Mail, Sparkles } from "lucide-react";
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from "./Icons";
@@ -40,11 +39,11 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-14 z-10">
+      <div className="container mx-auto px-6 md:px-12 flex flex-col items-center justify-center z-10">
         
-        {/* Left Editorial Content */}
+        {/* Centered Editorial Content */}
         <motion.div 
-          className="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-left"
+          className="w-full max-w-4xl flex flex-col items-center text-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -63,14 +62,13 @@ export default function Hero() {
           {/* Huge Cinematic Heading */}
           <motion.h1 
             variants={itemVariants} 
-            className="text-5xl sm:text-7xl lg:text-8xl font-extrabold mb-4 tracking-tight font-heading leading-[1.05] text-[#F5FAF7]"
+            className="text-5xl sm:text-7xl lg:text-8xl font-extrabold mb-4 tracking-tight font-heading leading-[1.08] text-[#F5FAF7]"
           >
-            Hi, I&apos;m <br />
-            Saptaparni <span className="text-surname-gradient drop-shadow-[0_0_25px_rgba(149,199,164,0.35)]">Saha</span>
+            Hi, I&apos;m <span className="text-surname-gradient drop-shadow-[0_0_25px_rgba(149,199,164,0.35)]">Saptaparni Saha</span>
           </motion.h1>
           
           {/* Smooth Morphing Role */}
-          <motion.div variants={itemVariants} className="h-10 md:h-12 mb-6">
+          <motion.div variants={itemVariants} className="h-10 md:h-12 mb-6 flex justify-center items-center">
             <AnimatePresence mode="wait">
               <motion.h2
                 key={currentRoleIndex}
@@ -86,12 +84,12 @@ export default function Hero() {
           </motion.div>
           
           {/* Calm Editorial Summary */}
-          <motion.p variants={itemVariants} className="text-[#CFE8D6]/85 text-base sm:text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-light">
+          <motion.p variants={itemVariants} className="text-[#CFE8D6]/85 text-base sm:text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-light text-center">
             AI &amp; Machine Learning Engineer specializing in Retrieval-Augmented Generation (RAG), high-throughput FastAPI backends, and elegant production web applications.
           </motion.p>
           
           {/* Pill-Shaped Magnetic Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-5 mb-12">
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-5 mb-12">
             <motion.a 
               whileHover={{ scale: 1.05, boxShadow: "0 0 35px rgba(149,199,164,0.5)" }}
               whileTap={{ scale: 0.97 }}
@@ -115,7 +113,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Translucent Circular Glass Social Icons */}
-          <motion.div variants={itemVariants} className="flex items-center gap-4 relative z-20">
+          <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 relative z-20">
             <motion.a 
               whileHover={{ y: -5, scale: 1.1, backgroundColor: "rgba(149,199,164,0.2)", borderColor: "rgba(149,199,164,0.6)" }} 
               href="https://github.com/saptaparnisaha23/" 
@@ -144,54 +142,6 @@ export default function Hero() {
             >
               <Mail size={20} />
             </motion.a>
-          </motion.div>
-        </motion.div>
-
-        {/* Right Photograph Showcase Frame */}
-        <motion.div 
-          className="w-full lg:w-2/5 flex justify-center lg:justify-end"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-        >
-          <motion.div 
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-72 h-72 sm:w-88 sm:h-88 md:w-96 md:h-96 flex items-center justify-center"
-          >
-            {/* Soft Ambient Radial Halo */}
-            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(149,199,164,0.25)_0%,transparent_70%)] blur-3xl -z-10 animate-pulse" />
-
-            {/* Outer Rotating Dotted Ring */}
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-[-14px] rounded-full border border-dashed border-[#95C7A4]/40"
-            />
-            {/* Inner Counter-Rotating Dotted Ring */}
-            <motion.div 
-              animate={{ rotate: -360 }}
-              transition={{ duration: 38, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-[-28px] rounded-full border border-dashed border-[#CFE8D6]/25"
-            />
-            
-            {/* Orbiting Micro-Particles */}
-            <div className="absolute top-2 -right-3 w-3 h-3 rounded-full bg-[#95C7A4] blur-[0.5px] animate-bounce" />
-            <div className="absolute bottom-8 -left-4 w-2 h-2 rounded-full bg-[#CFE8D6] blur-[0.5px] animate-pulse" />
-            <div className="absolute top-1/2 -left-8 w-2 h-2 rounded-full bg-[#95C7A4]/80 blur-[0.5px]" />
-
-            {/* Luxury Profile Container with Glass Reflection Highlight */}
-            <div className="relative w-full h-full rounded-[36px] overflow-hidden border-2 border-[#CFE8D6]/30 shadow-[0_25px_60px_rgba(18,27,22,0.9)] glass-panel group">
-              <Image 
-                src="/saptaparni-profile-v2.jpg"
-                alt="Saptaparni Saha"
-                fill
-                className="object-cover scale-105 transition-transform duration-700 group-hover:scale-110"
-                priority
-              />
-              {/* Subtle Glass Reflection Angle Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#25332B]/60 via-transparent to-white/10 opacity-70 pointer-events-none group-hover:opacity-40 transition-opacity duration-500" />
-            </div>
           </motion.div>
         </motion.div>
       </div>
