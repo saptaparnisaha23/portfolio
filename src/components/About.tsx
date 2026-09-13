@@ -2,44 +2,44 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import { GraduationCap, Code2, Sparkles, MapPin, Award, BookOpen, Terminal, Database, Cpu, Layers } from "lucide-react";
+import { GraduationCap, Code2, Sparkles, MapPin, Award, BookOpen, Terminal, Database, Cpu, Layers, Coffee, Zap } from "lucide-react";
 
 const coreSkills = [
   {
-    name: "Python",
-    category: "AI & Core Logic",
-    description: "Primary language for AI modeling, backend development, and automation.",
+    category: "CORE LANGUAGE",
+    title: "Python",
     icon: Terminal,
+    tags: ["Python 3.12", "AsyncIO", "OOP", "Scripting"],
   },
   {
-    name: "FastAPI",
-    category: "API & Microservices",
-    description: "High-performance asynchronous REST APIs & backend orchestration.",
+    category: "CORE LANGUAGE",
+    title: "Java",
+    icon: Coffee,
+    tags: ["Java", "OOP", "Data Structures", "Backend Systems"],
+  },
+  {
+    category: "ARTIFICIAL INTELLIGENCE",
+    title: "AI & RAG Systems",
     icon: Cpu,
+    tags: ["ChromaDB", "Vector Search", "Gemini AI", "Claude AI"],
   },
   {
-    name: "RAG & ChromaDB",
-    category: "AI & Vector Search",
-    description: "Retrieval-Augmented Generation, vector indexation, & semantic search.",
-    icon: Sparkles,
-  },
-  {
-    name: "SQL & PostgreSQL",
-    category: "Database Engineering",
-    description: "Relational schema design, data modeling, & query optimization.",
-    icon: Database,
-  },
-  {
-    name: "Data Science & EDA",
-    category: "Analytics & ML",
-    description: "Data processing & exploratory analysis using Pandas & NumPy.",
+    category: "DATA SCIENCE & AI",
+    title: "Machine Learning (ML)",
     icon: Layers,
+    tags: ["Predictive Models", "Scikit-Learn", "Model Training", "Evaluation"],
   },
   {
-    name: "React & Next.js",
-    category: "Frontend Systems",
-    description: "Building fast, responsive, & interactive modern web applications.",
-    icon: Code2,
+    category: "DATA ARCHITECTURE",
+    title: "Data Engineering",
+    icon: Database,
+    tags: ["PostgreSQL", "SQL", "ETL Pipelines", "Data Processing"],
+  },
+  {
+    category: "MICROSERVICES",
+    title: "FastAPI & Backend",
+    icon: Zap,
+    tags: ["FastAPI", "REST APIs", "Microservices", "Pydantic"],
   },
 ];
 
@@ -194,12 +194,12 @@ export default function About() {
           className="pt-8"
         >
           <div className="mb-12 text-center lg:text-left">
-            <h3 className="text-2xl sm:text-3xl font-bold flex items-center justify-center lg:justify-start gap-3 text-[#F5FAF7] font-heading">
-              <Code2 className="text-[#95C7A4]" /> Core Skills &amp; Proficiencies
+            <div className="flex items-center justify-center lg:justify-start gap-2.5 text-xs font-mono text-[#95C7A4] uppercase tracking-[0.25em] mb-2 font-semibold">
+              <span className="w-5 h-[1px] bg-[#95C7A4]" /> SKILLS
+            </div>
+            <h3 className="text-4xl sm:text-5xl font-extrabold text-[#F5FAF7] font-heading tracking-tight">
+              Core Skills
             </h3>
-            <p className="text-sm text-[#CFE8D6]/70 mt-2 font-light">
-              Technical proficiencies in AI engineering, framework orchestration, and data science.
-            </p>
           </div>
 
           {/* Grid of Core Skill Cards */}
@@ -208,40 +208,41 @@ export default function About() {
               const SkillIcon = skill.icon;
               return (
                 <motion.div 
-                  key={skill.name} 
+                  key={skill.title} 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
                   whileHover={{ y: -4 }}
-                  className="glass-panel glass-panel-hover p-6 rounded-2xl border border-[#CFE8D6]/20 flex flex-col justify-between group relative overflow-hidden shadow-[0_10px_30px_rgba(18,27,22,0.6)]"
+                  className="glass-panel p-6 sm:p-7 rounded-2xl border border-[#CFE8D6]/15 flex flex-col justify-between group hover:border-[#95C7A4]/40 transition-all duration-300 shadow-[0_10px_30px_rgba(18,27,22,0.6)]"
                 >
                   <div>
-                    {/* Header: Icon & Category Badge */}
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <div className="p-3 rounded-xl bg-[#95C7A4]/15 text-[#95C7A4] border border-[#95C7A4]/25 group-hover:scale-110 group-hover:bg-[#95C7A4]/20 transition-all">
-                        <SkillIcon size={20} />
+                    {/* Card Header: Icon Box + Category Sub-label & Title */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="p-3.5 rounded-xl bg-[#25332B] text-[#95C7A4] border border-[#CFE8D6]/15 group-hover:border-[#95C7A4]/30 group-hover:scale-105 transition-all flex items-center justify-center flex-shrink-0">
+                        <SkillIcon size={24} />
                       </div>
-                      <span className="font-mono text-[11px] text-[#95C7A4] font-semibold px-3 py-1 rounded-full bg-[#95C7A4]/10 border border-[#95C7A4]/20 uppercase tracking-wider">
-                        {skill.category}
-                      </span>
+                      <div>
+                        <span className="font-mono text-[10px] sm:text-[11px] text-[#95C7A4] font-bold tracking-widest uppercase block mb-1">
+                          {skill.category}
+                        </span>
+                        <h4 className="text-lg sm:text-xl font-bold text-[#F5FAF7] font-heading group-hover:text-white transition-colors">
+                          {skill.title}
+                        </h4>
+                      </div>
                     </div>
 
-                    {/* Title */}
-                    <h4 className="text-lg font-bold text-[#F5FAF7] font-heading mb-2 group-hover:text-[#95C7A4] transition-colors">
-                      {skill.name}
-                    </h4>
-
-                    {/* Description */}
-                    <p className="text-xs sm:text-sm text-[#CFE8D6]/70 leading-relaxed font-light">
-                      {skill.description}
-                    </p>
-                  </div>
-
-                  {/* Bottom Accent Line on Hover */}
-                  <div className="mt-5 pt-3 border-t border-[#CFE8D6]/10 flex items-center justify-between text-xs font-mono text-[#CFE8D6]/50">
-                    <span>Core Competency</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#95C7A4] group-hover:animate-ping" />
+                    {/* Tag Pills */}
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {skill.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="px-3 py-1.5 rounded-lg bg-[#18231C]/90 border border-[#CFE8D6]/15 text-xs font-mono text-[#CFE8D6]/80 group-hover:border-[#95C7A4]/25 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               );
