@@ -29,7 +29,7 @@ export default function Navbar() {
 
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element && window.scrollY >= element.offsetTop - 220) {
+        if (element && window.scrollY >= element.offsetTop - 160) {
           current = section;
         }
       }
@@ -47,7 +47,7 @@ export default function Navbar() {
     const element = document.querySelector(href);
     if (element) {
       window.scrollTo({
-        top: (element as HTMLElement).offsetTop - 90,
+        top: (element as HTMLElement).offsetTop - 140,
         behavior: "smooth",
       });
     }

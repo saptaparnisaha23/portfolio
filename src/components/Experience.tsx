@@ -22,7 +22,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-32 relative z-10">
+    <section id="experience" className="pt-36 sm:pt-44 pb-32 scroll-mt-36 relative z-10 bg-transparent">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Section Header */}
