@@ -30,8 +30,11 @@ export default function Navbar() {
 
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element && window.scrollY >= element.offsetTop - 160) {
-          current = section;
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 200 && rect.bottom >= 150) {
+            current = section;
+          }
         }
       }
       setActiveSection(current);
@@ -47,8 +50,12 @@ export default function Navbar() {
     
     const element = document.querySelector(href);
     if (element) {
+      const elementHeader = element.querySelector("h2, h3") || element;
+      const headerRect = elementHeader.getBoundingClientRect();
+      const targetY = window.scrollY + headerRect.top - 110;
+
       window.scrollTo({
-        top: (element as HTMLElement).offsetTop - 140,
+        top: Math.max(0, targetY),
         behavior: "smooth",
       });
     }
